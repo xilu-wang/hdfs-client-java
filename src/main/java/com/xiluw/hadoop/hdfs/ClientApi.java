@@ -1,44 +1,3 @@
-## HDFS Shell Commands
-
-#### Start Hadoop cluster
-
-```shell script
-# start/stop HDFS on the namenode
-sbin/start-dfs.sh 
-sbin/stop-dfs.sh 
-
-# start/stop yarn on the resource manager
-sbin/start-yarn.sh 
-sbin/stop-yarn.sh
-```
-
-#### Help
-```shell script
-hdfs dfs -help <command>
-```
-```shell script
-$ hdfs dfs -help rm
--rm [-f] [-r|-R] [-skipTrash] <src> ... :
-  Delete all files that match the specified file pattern. Equivalent to the Unix
-  command "rm <src>"
-
-  -skipTrash  option bypasses trash, if enabled, and immediately deletes <src>
-  -f          If the file does not exist, do not display a diagnostic message or
-              modify the exit status to reflect an error.
-  -[rR]       Recursively deletes directories
-```
-
-#### Common Commands
-```shell script
-hdfs dfs -ls /
-hdfs dfs -mkdir -p /user/root/input 
-hdfs dfs -put wc.input /user/root/input
-hdfs dfs -get /user/root/input/wc.input ./
-```
-
-## HDFS Java client APIs
-
-```java
 package com.xiluw.hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
@@ -102,6 +61,6 @@ public class ClientApi {
                 new Path("/Users/xingwang/Downloads/spark-logs"), true);
     }
 
-}
 
-```
+
+}
